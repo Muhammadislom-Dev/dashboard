@@ -1,0 +1,40 @@
+.aside {
+  padding: 25px 0;
+  margin-left: 40px;
+  width: 240px;
+}
+
+.aside-list {
+  list-style-type: none;
+}
+
+.aside-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 22px;
+  line-height: 24px;
+  font-family: "Inter";
+  font-weight: 500;
+  color: #9ca2a7;
+  padding: 15px 35px;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+
+.aside__link-active {
+  background: dodgerblue;
+  border-radius: 5px;
+  padding: 15px 35px;
+  color: #fff;
+}
+
+.aside-link:hover {
+  background-color: #edf6ff;
+  color: dodgerblue;
+}
+
+.aside-item {
+  margin: 7px 0;
+  padding: 10px 0;
+}

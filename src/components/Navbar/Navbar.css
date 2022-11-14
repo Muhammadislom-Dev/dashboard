@@ -1,0 +1,28 @@
+.navbar{
+    padding: 10px 0;
+    margin-left: 70px;
+}
+
+.navbar-name{
+    color: black;
+    font-size: 30px;
+    line-height: 35px;
+    font-family: "Inter";
+    font-weight: 700;
+}
+
+.navbar-input{
+    width: 320px;
+    padding: 13px 18px;
+    border-radius: 8px;
+    outline: none;
+    background-color: #fafafa;
+    border: none;
+    margin: 0 80px;
+}
+
+.navbar .container{
+    display: flex;
+    align-items: center;
+}
+

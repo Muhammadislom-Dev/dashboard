@@ -1,0 +1,47 @@
+.history {
+  margin: 18px 0;
+  padding: 10px;
+}
+
+.history-table{
+    width: 97%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.history-list{
+    width: 30%;
+    border-radius: 12px;
+    overflow-y: auto;
+    background-color: #fff;
+    border-bottom: 13px solid white;
+    height: 400px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px, rgb(0 0 0 / 5%) 0px 4px 6px -2px;
+}
+
+.history-item{
+    background-color: #6CAEF3;
+    border-radius: 8px;
+    padding: 10px 0;
+}
+.history-items{
+    text-align: center;
+}
+
+.history-img{
+    width: 40px;
+}
+
+.history-titles{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.history-date{
+    padding: 5px 15px;
+    background-color: #fff;
+    margin: 0 15px;
+    border-radius: 8px;
+}
