@@ -7,7 +7,7 @@ import { paginate } from "../../utils/paginate";
 import Pagination from "../Pagination/Pagination";
 
 const Order = () => {
-  
+
   const [product, setProduct] = useState([]);
   const pageSize = 10;
   const [currentPage, setCurrentPage] = useState(1);
@@ -67,7 +67,7 @@ const Order = () => {
                 <th>{evt.id}</th>
                 <th>
                   {" "}
-                  <img src={evt.imageId} alt="" /> {evt.productName}
+                  <img src={`https://store-management-backend-app.herokuapp.com/api/v1/product${evt.imageId}`} alt="" /> {evt.productName}
                 </th>
                 <th>2022/12/12</th>
                 <th>{evt.amount}</th>
