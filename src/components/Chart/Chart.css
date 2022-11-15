@@ -1,4 +1,106 @@
-.chart{
-    margin: 18px 0;
-    padding: 10px;
+.chart {
+  margin: 18px 0;
+  padding: 10px;
+}
+
+.chart-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.chart-list {
+  width: 270px;
+  height: 160px;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.chart-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.chart-number {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.chart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.chart-subname {
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Inter";
+}
+
+.chart-span {
+  color: #04bf54;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.chart-subnames {
+  color: #545d65;
+  font-weight: bold;
+  margin: 10px 0;
+  font-size: 18px;
+  margin-left: 15px;
+}
+
+.chart-title {
+  border-radius: 10px;
+  padding: 15px;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  width: 700px;
+  height: 363px;
+  margin-top: 15px;
+}
+
+.chart-names{
+    margin: 15px;
+}
+
+.chart-price{
+   color: dodgerblue;
+   margin-top: 25px; 
+   font-size: 14px;
+   text-align: center;
+}
+
+.chart--title{
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    height: 363px;
+    width: 500px;   
+    margin-top: 15px;
+}
+
+.chart-date{
+    font-size: 13px;
+    margin: 0 15px;
+}
+
+.chart-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chart-name{
+    font-size: 22px;
 }

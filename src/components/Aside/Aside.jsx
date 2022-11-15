@@ -24,7 +24,7 @@ const Aside = () => {
                     <Link  onClick={handleAddClass} to='/order' className='aside-link'>Orders</Link>  
                 </li>
                 <li className="aside-item">
-                    <Link  onClick={handleAddClass} to='/' className='aside-link'>Products</Link>  
+                    <Link  onClick={handleAddClass} to='/category' className='aside-link'>Products</Link>  
                 </li>
                 <li className="aside-item">
                     <Link  onClick={handleAddClass} to='/product' className='aside-link'>Creat</Link>  

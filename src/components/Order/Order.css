@@ -3,71 +3,138 @@
   padding: 10px;
 }
 
-.order-title{
-    display: flex;
-    justify-content: flex-end;
+.order-title {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.order-date{
-    padding: 13px 15px;
-    background-color: dodgerblue;
+.order-date {
+  padding: 13px 15px;
+  background-color: dodgerblue;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+}
+
+.order-select {
+  padding: 5px 0;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.order-titles {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-button {
+  width: 180px;
+  height: 45px;
+  border: 2px solid dodgerblue;
+  background-color: dodgerblue;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.order-button:hover {
+  color: dodgerblue;
+  background-color: #fff;
+}
+
+.order-table {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.order-edit {
+  border-radius: 8px;
+  background-color: #e6ebed;
+  border: none;
+  width: 34px;
+  height: 34px;
+}
+
+.order-delete {
+  border-radius: 8px;
+  border: none;
+  width: 34px;
+  height: 34px;
+  background-color: #fbe9e9;
+  margin: 0 5px;
+}
+
+.order tbody th {
+  padding: 15px 0;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.order-input {
+  outline-color: dodgerblue;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  margin: 8px 0;
+}
+
+.modal-close {
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.order-label {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  color: #212529;
+  font-size: 16px;
+}
+
+.order-texts {
+  height: 80px;
+  outline-color: dodgerblue;
+  border-radius: 8px;
+  border: 1px solid gray;
+  padding: 10px 15px;
+  margin: 8px 0;
+  resize: none;
+}
+
+
+.order-file-img{
+    width: 100px;
+}
+
+.order-file[type="file"]{
+    display: none;
+}
+
+.order-files{
+    background-color: #F3F3F3;
     border-radius: 8px;
-    color: #fff;
     border: none;
-}
-
-.order-select{
-    padding: 5px 0;
-    border: 1px solid #000;
-    border-radius: 5px;
-}
-
-.order-titles{
-    margin-top: 25px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.order-button{
-    width: 180px;
-    height: 45px;
-    border: 2px solid dodgerblue;
-    background-color: dodgerblue;
+.order-submit{
+    background-color: #4CA85E;
     color: #fff;
-    font-size: 18px;
-    border-radius: 8px;
-    transition: 0.5s;
-    cursor: pointer;
-}
-
-.order-button:hover{
-    color: dodgerblue;
-    background-color: #fff;
-}
-
-.order-table{
-    width: 100%;
-    margin-top: 25px;
-}
-
-.order-edit{
-    border-radius: 8px;
-    background-color: #E6EBED;
-    border: none;
-    width: 34px;
-    height: 34px;
-}
-
-.order-delete{
-    border-radius: 8px;
-    border: none;
-    width: 34px;
-    height: 34px;
-    background-color: #FBE9E9;
-    margin: 0 5px;
-}
-
-.order tbody th{
-    padding: 15px 0;
+    width: 150px;
+    height: 35px;
+    border-radius: 15px;
+    border: 2px solid #4CA85E;
+    margin-top: 20px;
 }

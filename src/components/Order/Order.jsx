@@ -5,8 +5,42 @@ import edit from "../asests/img/edit.png";
 import axios from "axios";
 import { paginate } from "../../utils/paginate";
 import Pagination from "../Pagination/Pagination";
+import Modal from 'react-modal';
+import image from "../asests/img/image.png";
+
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    width:"30%",
+    borderRadius:"10px",
+    transform: 'translate(-50%, -50%)',
+  },
+};
 
 const Order = () => {
+
+  //Open Modal
+
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   const [product, setProduct] = useState([]);
   const pageSize = 10;
@@ -74,12 +108,12 @@ const Order = () => {
                 <th>${evt.price}</th>
                 <th>
                   <button
-                    onClick={() => handleDelete(product)}
+                    onClick={openModal}
                     className="order-edit"
                   >
                     <img src={edit} alt="" className="order-img" />{" "}
                   </button>
-                  <button className="order-delete">
+                  <button onClick={() => handleDelete(product)} className="order-delete">
                     <img src={deletes} alt="" className="order-img" />{" "}
                   </button>
                 </th>
@@ -95,6 +129,42 @@ const Order = () => {
           onPageChange={handlePageChange}
         />
       </div>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <button className="modal-close" onClick={closeModal}>&times;</button>
+        <form className="modal-form">
+            <label className="order-label" htmlFor="">
+                Product Name
+                <input className="order-input" type="name" placeholder="Product name"  />
+            </label>
+            <label className="order-label" htmlFor="">
+                Product Price
+                <input className="order-input" type="number" placeholder="Product price"  />
+            </label>
+            <label className="order-label" htmlFor="">
+                 Product Amount
+                <input className="order-input" type="number" placeholder="Product Amount"  />
+            </label>
+            <label htmlFor="" className="order-label">
+                Description
+                <textarea  
+                  placeholder="Description"
+                  className="order-texts"
+                />
+            </label>
+            <label className="order-files" htmlFor="file">
+              <img src={image} alt="" className="order-file-img" />
+              <input type="file" id="file" required className="order-file" />
+            </label>
+            <button className="order-submit">Submit</button>
+        </form>
+      </Modal>
     </div>
   );
 };
