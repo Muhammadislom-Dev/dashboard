@@ -7,6 +7,7 @@ import { paginate } from "../../utils/paginate";
 import Pagination from "../Pagination/Pagination";
 import Modal from 'react-modal';
 import image from "../asests/img/image.png";
+import { Link } from "react-router-dom";
 
 
 const customStyles = {
@@ -81,7 +82,7 @@ const Order = () => {
             <option value="Category B">Category B</option>
             <option value="Category C">Category C</option>
           </select>
-          <button className="order-button">+ Add Product</button>
+          <Link to="/product" className="order-button">+ Add Product</Link>
         </div>
 
         <table className="order-table">

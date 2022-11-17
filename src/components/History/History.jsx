@@ -5,6 +5,7 @@ import axios from "axios";
 
 const History = () => {
 
+
   const [historys, setHistory] = useState([]);
 
    useEffect(() => {
@@ -18,6 +19,8 @@ const History = () => {
   }, []);
 
 
+
+
   return (
     <div className="history">
       <div className="container">
@@ -25,12 +28,7 @@ const History = () => {
         <div className="order-title">
           <input type="date" className="order-date" />
         </div>
-        {
-          historys?.productList?.map((evt)=> (
-            <p>{evt.productList.id}</p>
-          ))
-        }
-        {/* <div className="history-page">
+        <div className="history-page">
           {historys?.map((evt) => (
             <div className="history-list">
               <div className="history-item">
@@ -62,7 +60,7 @@ const History = () => {
               </table>
             </div>
           ))}
-        </div> */}
+        </div>
       </div>
     </div>
   );

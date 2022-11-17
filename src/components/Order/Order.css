@@ -39,6 +39,11 @@
   border-radius: 8px;
   transition: 0.5s;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
 }
 
 .order-button:hover {

@@ -13,11 +13,30 @@
 .category-shop{
     background-color: #ED774D;
     color: #fff;
-    font-size: 16px;
-    width: 140px;
+    font-size: 18px;
+    width: 155px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center; 
     border-radius: 10px;  
+    margin-top: 15px;
+}
+
+.category-shops{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.category-table{
+  width: 100%;
+  margin-top: 30px;
+}
+
+.category-table thead{
+  border-bottom: 1.5px solid #a1a1a1;
+}
+
+.category-table th{
+  padding-bottom: 15px;
 }
