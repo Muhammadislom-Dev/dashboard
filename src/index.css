@@ -16,3 +16,18 @@ code {
   margin: 0;
   padding: 0;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:  #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: dodgerblue;
+}

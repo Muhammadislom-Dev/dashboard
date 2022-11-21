@@ -21,6 +21,7 @@
     justify-content: center; 
     border-radius: 10px;  
     margin-top: 15px;
+    border: none;
 }
 
 .category-shops{
@@ -31,6 +32,16 @@
 .category-table{
   width: 100%;
   margin-top: 30px;
+}
+
+.category-buy{
+  border: none;
+  background-color: #ED774D;
+  color: #fff;
+  width: 120px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 .category-table thead{

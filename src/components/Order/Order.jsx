@@ -35,7 +35,6 @@ const Order = () => {
   }
 
   function afterOpenModal() {
-    // references are now sync'd and can be accessed.
     subtitle.style.color = '#f00';
   }
 
@@ -102,7 +101,8 @@ const Order = () => {
                 <th>{evt.id}</th>
                 <th>
                   {" "}
-                  <img src={`https://store-management-backend-app.herokuapp.com/api/v1/product${evt.imageId}`} alt="" /> {evt.productName}
+                  {/* <img src={`https://store-management-backend-app.herokuapp.com/api/v1/product${evt.imageId}`} alt="" />  */}
+                  {evt.productName}
                 </th>
                 <th>2022/12/12</th>
                 <th>{evt.amount}</th>

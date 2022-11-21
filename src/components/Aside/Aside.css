@@ -14,23 +14,41 @@
   font-size: 20px;
   line-height: 24px;
   font-family: "Inter";
-  font-weight: 500;
+  font-weight: bold;
   color: #9ca2a7;
-  padding: 15px 35px;
+  padding: 15px;
+  width: 180px;
   transition: 0.3s;
   border-radius: 8px;
 }
 
 .aside__link-active {
-  background: dodgerblue;
+  background: #EDF6FF;
   border-radius: 5px;
-  padding: 15px 35px;
-  color: #fff;
+  padding: 15px;
+  width: 180px;
+  color: #45A5FF;
+  font-weight: bold;
+  transition: 0.5s;
 }
 
-.aside-link:hover {
-  background-color: #edf6ff;
-  color: dodgerblue;
+.aside__link-active:hover{
+  color: #45A5FF;
+}
+
+.aside__link-active svg path {
+  fill: #45A5FF;
+  font-weight: bold;
+}
+
+.aside__link-active svg{
+  margin: 0 8px;
+  font-weight: bold;
+}
+
+.aside-link svg{
+  margin: 0 8px;
+  font-weight: bold;
 }
 
 .aside-item {

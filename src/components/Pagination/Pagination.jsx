@@ -11,7 +11,9 @@ const Pagination = ({ items, pageSize, currentPage, onPageChange }) => {
   return (
     <>
       <nav>
-        <ul className="pagination">
+        <ul 
+        style={{display:"flex", justifyContent:"flex-end", marginTop:"50px", marginRight:"80px"}}
+        className="pagination">
           {pages.map((page) => (
             <li
               key={page}

@@ -4,11 +4,9 @@ import history from "../asests/img/history.png";
 import axios from "axios";
 
 const History = () => {
-
-
   const [historys, setHistory] = useState([]);
 
-   useEffect(() => {
+  useEffect(() => {
     const getPosts = async () => {
       const { data: res } = await axios.get(
         "https://store-management-backend-app.herokuapp.com/api/v1/sale/history"
@@ -18,8 +16,7 @@ const History = () => {
     getPosts();
   }, []);
 
-
-
+  
 
   return (
     <div className="history">
@@ -40,22 +37,27 @@ const History = () => {
                   <p className="history-date">2022-05-13</p>
                 </div>
               </div>
+
               <table className="history-table">
                 <thead>
                   <tr>
-                    <th>No</th>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Amount</th>
                     <th>Price</th>
                   </tr>
                 </thead>
                 <tbody>
+                {evt.productList?.map((pro,i)=>(
                   <tr>
-                    <th>1</th>
-                    <th>{evt?.productList?.product?.productName}</th>
-                    <th>12</th>
-                    <th>$ {evt.productList?.product?.price}</th>
+                    <th>{pro?.product?.id}</th>
+                    <th>
+                      {pro?.product?.productName}
+                    </th>
+                    <th>{pro?.product?.amount}</th>
+                    <th>$ {pro?.product?.amount * pro?.product?.price} </th>
                   </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

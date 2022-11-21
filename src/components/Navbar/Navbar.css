@@ -1,6 +1,5 @@
 .navbar{
     padding: 10px 0;
-    margin-left: 70px;
 }
 
 .navbar-name{
@@ -21,8 +20,4 @@
     margin: 0 80px;
 }
 
-.navbar .container{
-    display: flex;
-    align-items: center;
-}
 

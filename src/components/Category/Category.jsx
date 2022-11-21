@@ -1,14 +1,12 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Pagination from "../Pagination/Pagination";
 import "./Category.css";
 import { paginate } from "../../utils/paginate";
-import deletes from "../asests/img/delete.png";
-import edit from "../asests/img/edit.png";
+import { Context } from "../../context/orderFoods";
 
 const Category = () => {
-
-
+  const { orderFoods, setOrderFoods } = useContext(Context);
   const [product, setProduct] = useState([]);
   const pageSize = 10;
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,17 +21,41 @@ const Category = () => {
     getPosts();
   }, []);
 
-  
+  const handleFood = (e) => {
+    let newArr = orderFoods.slice();
+    newArr.some((element) => element.id == e.target.dataset.id)
+      ? (newArr[
+          newArr.findIndex((food) => food.id == e.target.dataset.id)
+        ].count += 1)
+      : newArr.push({
+          ...product.find((product) => product.id == e.target.dataset.id),
+          count: 1,
+        });
+
+    setOrderFoods(newArr);
+  };
+
+  console.log(orderFoods);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
-  const handleDelete = (post) => {
-    setProduct(product.filter((p) => p.id !== post.id));
-  };
-
   const paginateProduct = paginate(product, currentPage, pageSize);
+
+  let [count, setCount] = useState(1);
+
+  function incrementCount() {
+    count = count + 1;
+    setCount(count);
+  }
+  function decrementCount() {
+    if (count <= 0) {
+      count = 1;
+    }
+    count = count - 1;
+    setCount(count);
+  }
 
   return (
     <div className="category">
@@ -43,7 +65,10 @@ const Category = () => {
           <input type="date" className="order-date" />
         </div>
         <div className="category-shops">
-          <span className="category-shop">Basket</span>
+          <button className="category-shop">
+            <p>{orderFoods.length}</p>
+            <p>Basket</p>
+          </button>
         </div>
 
         <table className="category-table">
@@ -64,7 +89,8 @@ const Category = () => {
                 <th>
                   {" "}
                   <img
-                    src={`https://store-management-backend-app.herokuapp.com/api/v1/product${evt.imageId}`}
+                    style={{ width: "70px", height: "80px" }}
+                    src={`https://store-management-backend-app.herokuapp.com/api/v1/attachment/${evt.imageId}`}
                     alt=""
                   />{" "}
                   {evt.productName}
@@ -73,14 +99,12 @@ const Category = () => {
                 <th>{evt.amount}</th>
                 <th>${evt.price}</th>
                 <th>
-                  <button  className="order-edit">
-                    <img src={edit} alt="" className="order-img" />{" "}
-                  </button>
                   <button
-                    onClick={() => handleDelete(product)}
-                    className="order-delete"
+                    onClick={handleFood}
+                    data-id={evt.id}
+                    className="category-buy"
                   >
-                    <img src={deletes} alt="" className="order-img" />{" "}
+                    Buy Now
                   </button>
                 </th>
               </tr>
