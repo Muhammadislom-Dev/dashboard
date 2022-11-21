@@ -31,3 +31,7 @@ code {
 ::-webkit-scrollbar-thumb {
   background: dodgerblue;
 }
+
+.aside ul{
+  padding-left: 0;
+}

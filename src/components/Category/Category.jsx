@@ -25,7 +25,7 @@ const Category = () => {
     let newArr = orderFoods.slice();
     newArr.some((element) => element.id == e.target.dataset.id)
       ? (newArr[
-          newArr.findIndex((food) => food.id == e.target.dataset.id)
+          newArr.findIndex((item) => item.id == e.target.dataset.id)
         ].count += 1)
       : newArr.push({
           ...product.find((product) => product.id == e.target.dataset.id),
@@ -66,8 +66,8 @@ const Category = () => {
         </div>
         <div className="category-shops">
           <button className="category-shop">
-            <p>{orderFoods.length}</p>
-            <p>Basket</p>
+            <p style={{marginTop:"14px"}}>{orderFoods.length}</p>
+            <p style={{marginTop:"14px", marginLeft:"5px"}}>Basket</p>
           </button>
         </div>
 
@@ -82,17 +82,16 @@ const Category = () => {
               <th>Status</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody >
             {paginateProduct.map((evt) => (
               <tr>
                 <th>{evt.id}</th>
-                <th>
-                  {" "}
+                <th style={{display:"flex", alignItems:"center", marginTop:"10px"}}>
                   <img
-                    style={{ width: "70px", height: "80px" }}
+                    style={{ width: "70px", height: "80px", margin:"0 8px" }}
                     src={`https://store-management-backend-app.herokuapp.com/api/v1/attachment/${evt.imageId}`}
                     alt=""
-                  />{" "}
+                  />
                   {evt.productName}
                 </th>
                 <th>2022/12/12</th>

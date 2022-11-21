@@ -85,7 +85,7 @@ const Order = () => {
         </div>
 
         <table className="order-table">
-          <thead>
+          <thead style={{borderBottom:"1px solid #a1a1a1"}}>
             <tr>
               <th>ID</th>
               <th>Product Name</th>
@@ -101,7 +101,11 @@ const Order = () => {
                 <th>{evt.id}</th>
                 <th>
                   {" "}
-                  {/* <img src={`https://store-management-backend-app.herokuapp.com/api/v1/product${evt.imageId}`} alt="" />  */}
+                  <img
+                    style={{ width: "70px", height: "80px", margin:"0 8px" }}
+                    src={`https://store-management-backend-app.herokuapp.com/api/v1/attachment/${evt.imageId}`}
+                    alt=""
+                  />
                   {evt.productName}
                 </th>
                 <th>2022/12/12</th>

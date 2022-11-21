@@ -4,7 +4,8 @@
 }
 
 .aside-list {
-  list-style-type: none;
+  list-style: none;
+  margin-left: 0;
 }
 
 .aside-link {
@@ -17,7 +18,7 @@
   font-weight: bold;
   color: #9ca2a7;
   padding: 15px;
-  width: 180px;
+  width: 210px;
   transition: 0.3s;
   border-radius: 8px;
 }
@@ -26,7 +27,7 @@
   background: #EDF6FF;
   border-radius: 5px;
   padding: 15px;
-  width: 180px;
+  width: 210px;
   color: #45A5FF;
   font-weight: bold;
   transition: 0.5s;

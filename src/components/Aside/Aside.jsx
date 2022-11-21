@@ -20,7 +20,7 @@ const Aside = () => {
 
   return (
     <div className='aside'>
-        <div className="container">
+        {/* <div className="container"> */}
             <ul className="aside-list">
                 <li className="aside-item">
                     <Link  onClick={handleAddClass} to='/' className='aside-link'><Home /> Dashboard</Link>  
@@ -38,7 +38,7 @@ const Aside = () => {
                     <Link  onClick={handleAddClass} to='/history' className='aside-link'><Exam /> History</Link>  
                 </li>
             </ul>
-        </div>
+        {/* </div> */}
     </div>
   )
 }
