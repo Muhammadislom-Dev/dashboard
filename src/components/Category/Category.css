@@ -55,3 +55,99 @@
 tbody tr{
   border-bottom: 0.5px solid #a1a1a1;
 }
+
+.category-close{
+  border: none;
+  cursor: pointer;
+  color: red;
+  background-color: transparent;
+  font-size: 35px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.modal-list{
+  list-style: none;
+}
+
+.modal-img{
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.modal-item{
+  display: flex;
+  align-items: center;
+}
+
+.modal-title{
+  font-size: 25px;
+  line-height: 35px;
+  color: #ED774D;
+  font-weight: 700;
+  font-family: cursive;
+}
+
+.modal-blok{
+  display: flex;
+  align-items: center;
+}
+
+.modal-minus, .modal-plus{
+  border: 1px solid #ED774D;
+  height: 37px;
+  border-radius: 8px;
+  padding:0px 10px;
+  color: #fff;
+  background-color: #ED774D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.modal-table{
+  width: 100%;
+  margin-top: 30px;
+}
+
+thead,
+tbody {
+  text-align: start;
+}
+
+thead th {
+  text-align: start;
+}
+
+.modal-price{
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  font-family: cursive;
+  margin-top: 20px;
+}
+
+
+.modal-btn{
+  border-radius: 8px;
+  border: none;
+  width: 34px;
+  height: 34px;
+  background-color: #fbe9e9;
+  margin: 0 5px;
+}
+
+.modal-check{
+  border: 1px solid #ED774D;
+  background-color: #ED774D;
+  color: #fff;
+  font-size: 17px;
+  line-height: 21px;
+  font-family: cursive;
+  cursor: pointer;
+  width: 130px;
+  height: 35px;
+  border-radius: 8px;
+}

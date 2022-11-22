@@ -14,12 +14,12 @@ const Product = () => {
     const { description } = evt.target.elements;
     const { amount } = evt.target.elements;
     const { price } = evt.target.elements;
-    const { imageId } = evt.target.elements;
+    // const { imageId } = evt.target.elements;
     formData.append("productName", productName.value);
     formData.append("description", description.value);
     formData.append("amount", amount.value);
     formData.append("price", price.value);
-    formData.append("imageId", imageId.files[0]);
+    // formData.append("imageId", imageId.files[0]);
 
     axios
       .post(
@@ -61,7 +61,6 @@ const Product = () => {
               <input
                 type="file"
                 name="imageId"
-                required
                 id='choose_file'
                 accept="image/*"
                 className="product-file"

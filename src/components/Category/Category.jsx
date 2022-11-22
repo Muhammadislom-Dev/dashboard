@@ -4,8 +4,43 @@ import Pagination from "../Pagination/Pagination";
 import "./Category.css";
 import { paginate } from "../../utils/paginate";
 import { Context } from "../../context/orderFoods";
+import Modal from 'react-modal';
+import deletes from '../asests/img/delete.png'
+
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    width:"90%",
+    height:"80%",
+    transform: 'translate(-50%, -50%)',
+  },
+};
 
 const Category = () => {
+
+
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+
   const { orderFoods, setOrderFoods } = useContext(Context);
   const [product, setProduct] = useState([]);
   const pageSize = 10;
@@ -45,11 +80,11 @@ const Category = () => {
 
   let [count, setCount] = useState(1);
 
-  function incrementCount() {
+  const incrementCount = () => {
     count = count + 1;
     setCount(count);
   }
-  function decrementCount() {
+  const decrementCount = () => {
     if (count <= 0) {
       count = 1;
     }
@@ -65,7 +100,7 @@ const Category = () => {
           <input type="date" className="order-date" />
         </div>
         <div className="category-shops">
-          <button className="category-shop">
+          <button onClick={openModal} className="category-shop">
             <p style={{marginTop:"14px"}}>{orderFoods.length}</p>
             <p style={{marginTop:"14px", marginLeft:"5px"}}>Basket</p>
           </button>
@@ -117,6 +152,73 @@ const Category = () => {
           onPageChange={handlePageChange}
         />
       </div>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <button className="category-close" onClick={closeModal}>&times;</button>
+        <div className="category-page">
+          <table className="modal-table">
+             <thead>
+                 <tr>
+                    <th>PHOTO</th>
+                    <th>NAME</th>
+                    <th>QUANTITY</th>
+                    <th>PRICE</th>
+                    <th>TOTAL</th>
+                 </tr>
+             </thead>
+             <tbody>
+                {
+                  orderFoods.map((food) => (
+                    <tr className="modal-titles">
+                       <td>
+                          <img className="modal-img"  
+                          src={`https://store-management-backend-app.herokuapp.com/api/v1/attachment/${food.imageId}`} alt="" />
+                       </td>
+                       <td> <p className="modal-title">{food.productName}</p></td>
+                       <td>
+                        <div className="modal-blok">
+                            <button className="modal-minus" onClick={(e) => decrementCount()}>
+                              -
+                            </button>
+                            <span className="modal-count">{food.amount}</span>
+                            <button className="modal-plus" onClick={(e) => incrementCount()}>
+                              +
+                            </button>
+                          </div>
+                       </td>
+                       <td>
+                          <p className="modal-price">{food.price} $</p>
+                       </td>
+                       <td>
+                          <p className="modal-price">
+                            {(food.price * food.amount)} $
+                          </p>
+                       </td>
+                       <td>
+                        <button
+                            className="modal-btn"
+                            onClick={() => {
+                              setOrderFoods(
+                                orderFoods.filter((ovqat) => ovqat.id !== food.id)
+                              );
+                            }}
+                          > <img src={deletes} alt="" />
+                        </button>
+                        <button className="modal-check">Check Out</button>
+                       </td>
+                    </tr>
+                  ))
+                }
+             </tbody>
+          </table>
+        </div>
+      </Modal>
     </div>
   );
 };

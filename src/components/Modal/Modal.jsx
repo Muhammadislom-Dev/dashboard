@@ -1,7 +1,8 @@
 import "./Modal.css";
 import reactDom from "react-dom";
+import React from "react";
 
-const Modal = ({ show, children, w, mh, onAdd }) => {
+const Modal = ({ show, children, w, mh }) => {
   return reactDom.createPortal(
     <>
       {show ? (
